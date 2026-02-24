@@ -7,12 +7,14 @@ export function useGameProvider(){
     return useContext(GameContex);
 }
 
+
 function GameProvider({children}){
  
     const [bombs, setBombs] = useState(5);
     const [board, setBoard] = useState({rows : 10, cols : 8});
     const {humanTime, timeLeft} = useTimer(3);
-   
+
+       
     const values = {
         bombs, setBombs, humanTime, timeLeft, board
     }
