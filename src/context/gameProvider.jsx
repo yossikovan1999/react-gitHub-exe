@@ -9,11 +9,16 @@ export function useGameProvider(){
 
 function GameProvider({children}){
  
-    const [bomb, setBomb] = useState(5);
+    const [bombs, setBombs] = useState(5);
+    const [board, setBoard] = useState({rows : 10, cols : 8});
     const {humanTime, timeLeft} = useTimer(3);
    
+    const values = {
+        bombs, setBombs, humanTime, timeLeft, board
+    }
+
     return(
-        <GameContex.Provider value={{humanTime, timeLeft}}>
+        <GameContex.Provider value={values}>
             {children}
         </GameContex.Provider>
     )

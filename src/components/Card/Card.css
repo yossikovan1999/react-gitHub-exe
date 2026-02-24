@@ -1,4 +1,20 @@
 
 .card{
-    
+    flex: 1;
+    padding: 1rem;
+    border: white 3px solid;
+    border-radius: 8px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-bottom: 2px white solid;
+}
+
+.card-main-text{
+    text-align: center;
+    font-size: 2rem;
 }
