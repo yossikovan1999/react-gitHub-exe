@@ -1,0 +1,11 @@
+
+
+.board-header{
+    margin-top : 30px;
+    border-top: 2px white solid;
+    border-bottom: 2px white solid;
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-align: center;
+    padding: 10px;
+}
