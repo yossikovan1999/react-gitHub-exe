@@ -1,5 +1,13 @@
 
-/* .header-component{
-
+.header-component{
     display: flex;
-} */
+    justify-content: space-around;
+    align-items: center;
+    background-color: #151d30;
+}
+
+.header-component .right-text {
+  color: #3b7546;
+  font-size: 1.3rem;
+  font-weight: 500;
+}

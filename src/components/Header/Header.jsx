@@ -2,12 +2,12 @@ import "./Header.css"
 
 function Header() {
   return (
-    <header>
+    <header className="header-component">
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="38"
+          height="38"
           viewBox="0 0 20 20"
         >
           <path
@@ -17,7 +17,7 @@ function Header() {
         </svg>
       </div>
       <h1>Bomb detection application</h1>
-      <div>Simulation Active</div>
+      <div className="right-text">Simulation Active</div>
     </header>
   );
 }
