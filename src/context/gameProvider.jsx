@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import useTimer from "../hooks/useTimer";
 
 const GameContex = createContext();
@@ -45,9 +45,20 @@ function initializeBoard(rows = 10, cols = 10) {
 //            Game Provider
 //=======================================
 function GameProvider({ children }) {
+    
   const [bombsCount, setBombsCount] = useState(5);
   const [board, setBoard] = useState(()=>initializeBoard());
-  const { humanTime, timeLeft } = useTimer(3);
+  const [gameOver, setGameOver] = useState(false);
+  const { humanTime, timeLeft, setStopTimer } = useTimer(3);
+  
+  useEffect(()=>{
+    
+    if(bombsCount <= 0){
+      setGameOver(true);
+      setStopTimer(false);
+    }
+
+  }, [gameOver])
 
   const values = {
     bombsCount,
@@ -55,6 +66,7 @@ function GameProvider({ children }) {
     humanTime,
     timeLeft,
     board,
+    setBoard
   };
 
   return <GameContex.Provider value={values}>{children}</GameContex.Provider>;
