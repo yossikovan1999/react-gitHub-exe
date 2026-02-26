@@ -4,7 +4,7 @@ import "./CardsSection.css"
 
 function CardSection(){
     
-    const { bombs, humanTime, board} = useGameProvider()
+    const { bombsCount, humanTime, board} = useGameProvider()
     
     const svgArr = [
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="#e9e9e9" d="M9 3V1h6v2zm2 11h2V8h-2zm-2.488 7.288q-1.637-.713-2.862-1.938t-1.937-2.863T3 13t.713-3.488T5.65 6.65t2.863-1.937T12 4q1.55 0 2.975.5t2.675 1.45l1.4-1.4l1.4 1.4l-1.4 1.4Q20 8.6 20.5 10.025T21 13q0 1.85-.713 3.488T18.35 19.35t-2.863 1.938T12 22t-3.488-.712"/></svg>,
@@ -14,9 +14,9 @@ function CardSection(){
 
     return(
         <div className="cards-section">
-          <Card svg={svgArr[1]} headerText="Bombs Remaining" mainText={bombs}/>
+          <Card svg={svgArr[1]} headerText="Bombs Remaining" mainText={bombsCount}/>
           <Card svg={svgArr[0]} headerText="Time remaining" mainText={humanTime}/>
-          <Card svg={svgArr[2]} headerText="Board Size" mainText={`${board.rows} X ${board.cols}`}/>
+          <Card svg={svgArr[2]} headerText="Board Size" mainText={`${10} X ${10}`}/>
         </div>
     )
 }

@@ -8,16 +8,24 @@ import BoardHeader from './components/BoardHeader/BoardHeader';
 import Board from './components/Board/Board';
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [key, setKey] = useState(0);
+
+  function handleRestart(){
+    setKey((prev)=>prev+1)
+  }
 
   return (
     <>
       <Header/>
-      <GameProvider>
+      <GameProvider key={key}>
         <CardSection/>
         <BoardHeader/>
         <Board/>
       </GameProvider>
+      <div className='restart-btn-section'>
+        <button onClick={handleRestart}>Restart</button>
+      </div>
     </>
   )
 }
